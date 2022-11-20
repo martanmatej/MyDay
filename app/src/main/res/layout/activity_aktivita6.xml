@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Aktivita6">
+
+    <EditText
+        android:id="@+id/input20"
+        android:layout_width="303dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="528dp"
+        android:background="@drawable/settingsshadow"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input7"
+        android:layout_width="303dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="445dp"
+        android:background="@drawable/darkershadow"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input8"
+        android:layout_width="303dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="309dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="367dp"
+        android:background="@drawable/settingsshadow"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input9"
+        android:layout_width="303dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="291dp"
+        android:background="@drawable/darkershadow"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input10"
+        android:layout_width="305dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/settingsshadow"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView109"
+        android:layout_width="312dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="625dp"
+        android:text="Jmenuj 5 věcí kolem tebe!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="337dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="576dp"
+        android:layout_marginBottom="81dp"
+        android:background="@drawable/confirmbutton"
+        android:text="Potvrdit"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
