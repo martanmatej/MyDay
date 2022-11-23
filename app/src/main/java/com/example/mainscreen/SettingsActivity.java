@@ -19,8 +19,18 @@ import android.widget.Toolbar;
 public class SettingsActivity extends AppCompatActivity {
     Switch aSwitch;
     protected Button button10, button11;
-    @Override
 
+    /**
+     * Metoda pro spouštění url jako ACTION_VIEW
+     * @param url
+     */
+    private void openUrl(String url){
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -37,9 +47,15 @@ public class SettingsActivity extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.instagram.com/martanmatej"); //TODO: Dat sem nas official IG
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                //TODO: Dat sem nas official IG
+                openUrl("https://www.instagram.com/martanmatej");
+            }
+        });
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: Dat sem nas official web
+                openUrl("https://www.linkabezpeci.cz/");
             }
         });
     }
