@@ -37,6 +37,9 @@ public class Aktivita7 extends AppCompatActivity {
 
         System.out.println("Aktivita7 " + Aktivita2.i);
 
+        /**
+         * Event listener, měnící názvy a ukládající data do listu podle počtu stisknutí tlačítka
+         */
         button = (Button) findViewById(R.id.button17);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +91,9 @@ public class Aktivita7 extends AppCompatActivity {
         count = 1;
     }
 
+    /**
+     * Metoda, zobrazující dialog, zda se uživatel cítí lépe a reaguje na odpovědi
+     */
     public void showDialogDone() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -108,6 +114,9 @@ public class Aktivita7 extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Pomocná metoda pro @showDialog metodu. Zobrazí jiný dialog v případě potvrzeného zlepšení
+     */
     public void showDialogAgain() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -122,6 +131,9 @@ public class Aktivita7 extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Pomocná metoda pro showDialog. Zobrazuje další dialog, který se zobrazí v případě, že se uživatel cítí lépe a zvolil tuto možnost
+     */
     public void showDialogWorse() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -142,6 +154,10 @@ public class Aktivita7 extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Metoda, která kontroluje kolik aktivit uživatel vyzkoušel a ptá se ho zda, chce pokračovat
+     * @count je nastaven po 4 opakováních
+     */
     public void control() {
         if (Aktivita2.i > 4) {
             Aktivita2.i = 1;
@@ -160,16 +176,25 @@ public class Aktivita7 extends AppCompatActivity {
         }
     }
 
+    /**
+     * Navigator na screen @Aktivita4 - styly dýchání
+     */
     public void HandleMove() {
         Intent intent = new Intent(this, Aktivita4.class);
         startActivity(intent);
     }
 
+    /**
+     * Navigator na domovsky screen
+     */
     public void handleGoHome() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Navigator na screen s vybery pomoci
+     */
     public void handleGoChoose() {
         Intent intent = new Intent(this, Aktivita2.class);
         startActivity(intent);

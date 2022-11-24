@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Domovský screen aplikace
+ */
 public class MainActivity extends AppCompatActivity {
     public Button button1,button2,button3,button4,button5,button6,button7;
     public static int clicked;
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+        /**
+         * Listener, pro všechna tlačítka
+         */
         TextView settings = (TextView) findViewById(R.id.settingsID);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,47 +103,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*
-            public void openAktivita2(){
-                Intent intent = new Intent(this, Aktivita2.class);
-                startActivity(intent);
-            }
-            public void openAktivita3(){
-                Intent intent = new Intent(this, Aktivita3.class);
-                startActivity(intent);
-            }
-
-            public void openAktivita4(){
-                Intent intent = new Intent(this, Aktivita4.class);
-                startActivity(intent);
-            }
-            public void openAktivita5(){
-                Intent intent = new Intent(this, Aktivita5.class);
-                startActivity(intent);
-            }
-            public void openAktivita6(){
-                Intent intent = new Intent(this, Aktivita6.class);
-                startActivity(intent);
-            }
-            public void openAktivita7(){
-                Intent intent = new Intent(this, Aktivita7.class);
-                startActivity(intent);
-            }
-            public void openAktivita8(){
-                Intent intent = new Intent(this, Aktivita8.class);
-                startActivity(intent);
-            }
-
-
-             */
+    /**
+     * Navigator, otvírající nastavení
+     */
     public void openSettingsActivity(){
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
-    public void openCoToVysttihuje(){
-        Intent intent = new Intent(this,coToVystihuje.class);
-        startActivity(intent);
-    }
+
+    /**
+     * Navigator, který otvírá screen rozhodující o aktuálním problému @momentalniProblem
+     */
     public void openMomentalniProblem(){ //otevira momentalni problem ano/ne
         Intent intent = new Intent(this, momentalniProblem.class);
         startActivity(intent);

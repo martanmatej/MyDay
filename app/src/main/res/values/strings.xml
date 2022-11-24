@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">MyDay</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cit_ty_kter_nakopnou">Citáty, které nakopnou</string>
     <string name="v_ty_kter_t_nabij_sebev_dom_m">Věty, které tě nabijí sebevědomím.</string>
     <string name="vyjmenuj_co_vid_a_sly">Vyjmenuj co vidíš a slyšíš</string>

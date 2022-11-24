@@ -17,34 +17,24 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Fragment, zobrazující dýchací techniku do břicha.
  * A simple {@link Fragment} subclass.
  * Use the {@link brichoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class brichoFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public brichoFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment brichoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static brichoFragment newInstance(String param1, String param2) {
         brichoFragment fragment = new brichoFragment();
         Bundle args = new Bundle();
@@ -66,6 +56,13 @@ public class brichoFragment extends Fragment {
         }
     }
 
+    /**
+     * Po vytvoření View nastavujeme vlastní komponenty
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return View
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,8 +77,9 @@ public class brichoFragment extends Fragment {
         image.setVisibility(screen.GONE);
         helpText = (TextView) screen.findViewById(R.id.textView113);
 
-
-
+        /**
+         * Event listener, spuštějící začátek sekvence metod pro pomoc
+         */
         startProcess = (Button) screen.findViewById(R.id.button18);
         startProcess.setOnClickListener(new View.OnClickListener() {
             @Override

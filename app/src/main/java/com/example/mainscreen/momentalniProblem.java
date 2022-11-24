@@ -10,9 +10,19 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+/**
+ * Třída, kde uživatel rozhoduje, zda je to akutní problém, či nikoliv
+ * ANO - otvírá @Aktivita2
+ * NE - otvírá @coToVystihuje
+ */
+
 public class momentalniProblem extends AppCompatActivity {
-     protected Button button8,button9;//tlacitka 8 - ano tlacitka 9 - ne
+    protected Button button8,button9;//tlacitka 8 - ano tlacitka 9 - ne
     static int clicked = MainActivity.clicked;
+
+    /**
+     * Navigátor zpět na domovský screen
+     */
     public void navigateBack(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -33,39 +43,14 @@ public class momentalniProblem extends AppCompatActivity {
         Button button8 = findViewById(R.id.button8);
         Button button9 = findViewById(R.id.button9);
 
-
-
+        /**
+         * Listener, který rozhoduje o stisknutém tlačítku
+         */
         button8.setOnClickListener(new View.OnClickListener() { //tlacitko ANO
             @Override
             public void onClick(View v) {
                 Log.i("problemANO",Integer.toString(clicked));
                 openAktivita2();
-                /*
-                switch(clicked){
-                    case 1:
-                        openAktivita2();
-                        break;
-                    case 2:
-                        openAktivita3();
-                        break;
-                    case 3:
-                        openAktivita4();
-                        break;
-                    case 4:
-                        openAktivita5();
-                        break;
-                    case 5:
-                        openAktivita6();
-                        break;
-                    case 6:
-                        openAktivita7();
-                        break;
-                    case 7:
-                        openAktivita8();
-                        break;
-                }
-
-                 */
             }
         });
         button9.setOnClickListener(new View.OnClickListener() { //tlacitko NE
@@ -91,34 +76,17 @@ public class momentalniProblem extends AppCompatActivity {
         Log.i("onResumeProblem",Integer.toString(Aktivita2.i));
     }
 
+    /**
+     * Navigator, který otvírá možnosti pomoci @Aktivita2
+     */
     public void openAktivita2(){
         Intent intent = new Intent(this, Aktivita2.class);
         startActivity(intent);
     }
-    public void openAktivita3(){
-        Intent intent = new Intent(this, Aktivita3.class);
-        startActivity(intent);
-    }
-    public void openAktivita4(){
-        Intent intent = new Intent(this, Aktivita4.class);
-        startActivity(intent);
-    }
-    public void openAktivita5(){
-        Intent intent = new Intent(this, Aktivita5.class);
-        startActivity(intent);
-    }
-    public void openAktivita6(){
-        Intent intent = new Intent(this, Aktivita6.class);
-        startActivity(intent);
-    }
-    public void openAktivita7(){
-        Intent intent = new Intent(this, Aktivita7.class);
-        startActivity(intent);
-    }
-    public void openAktivita8(){
-        Intent intent = new Intent(this, Aktivita8.class);
-        startActivity(intent);
-    }
+
+    /**
+     * Navigator, který otvírá screen v případě, že není nutná závažná pomoc
+     */
     public void openCoToVysttihuje(){
         Intent intent = new Intent(this,coToVystihuje.class);
         startActivity(intent);

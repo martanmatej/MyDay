@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainScreen">
         <activity
-            android:name=".coVidis"
-            android:exported="false" />
-        <activity
             android:name=".coToVystihuje"
             android:exported="false" />
         <activity
@@ -23,9 +20,6 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".momentalniProblem"
-            android:exported="false" />
-        <activity
-            android:name=".Aktivita8"
             android:exported="false" />
         <activity
             android:name=".Aktivita7"
@@ -38,9 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".Aktivita4"
-            android:exported="false" />
-        <activity
-            android:name=".Aktivita3"
             android:exported="false" />
         <activity
             android:name=".Aktivita2"

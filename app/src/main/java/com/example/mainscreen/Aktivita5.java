@@ -1,7 +1,9 @@
 package com.example.mainscreen;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +20,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * Třída, zpracovávájící logiku pro screen s citáty
+ * 4. metoda pomoci
+ */
 public class Aktivita5 extends AppCompatActivity {
 
+    /**
+     * Při zmáčknutí tlačítka zpět naviguje rovnou na screen se všemi možnostmi pomoci
+     */
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, Aktivita2.class);
@@ -32,6 +41,9 @@ public class Aktivita5 extends AppCompatActivity {
     ArrayList<String> quotesList = new ArrayList<String>();
     ArrayList<String> authorList = new ArrayList<String>();
 
+    /**
+     * Metoda, nastavující text s citátem + autora citátu
+     */
     private void setBothText(){
         mainText.setText(quotesList.get(indicator));
         authorText.setText(authorList.get(indicator));
@@ -45,13 +57,18 @@ public class Aktivita5 extends AppCompatActivity {
         setContentView(R.layout.activity_aktivita5);
 
 
+        Aktivita2.i++;
+        control();
         String helper;
         mainText = findViewById(R.id.textView120);
         authorText = findViewById(R.id.textView121);
         before = findViewById(R.id.button24);
         after = findViewById(R.id.button25);
-        indicator = 0;
+        indicator = 0; //ukazatel na jakém jsme indexu v listu citátů a autorů
 
+        /**
+         * Načítání citátů ze souboru
+         */
         try {
             //Načítá z assets složky txt file... FileReader nefunguje
             BufferedReader bufferedReader = new BufferedReader(
@@ -96,5 +113,34 @@ public class Aktivita5 extends AppCompatActivity {
             }
         });
 
+    }
+    /**
+     * Metoda, která kontroluje kolik aktivit uživatel vyzkoušel a ptá se ho zda, chce pokračovat
+     * @count je nastaven po 4 opakováních
+     */
+    public void control(){
+        if(Aktivita2.i>4){
+            Aktivita2.i=1;
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.create();
+            dialog.setTitle("Upozornění");
+            dialog.setMessage("Už jsi vyzkoušel většinu aktivit. Chceš pokračovat?");
+            dialog.setPositiveButton("Ano", null);
+            dialog.setNegativeButton("Ne", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    HandleGoHome();
+                }
+            });
+            dialog.show();
+        }
+    }
+
+    /**
+     * Navigator pro přesun na domovský screen
+     */
+    public void HandleGoHome(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -15,23 +15,20 @@ import android.widget.TextView;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Fragment, který zpracovává 3. možnost dýchací pomoci (Roll)
  * A simple {@link Fragment} subclass.
  * Use the {@link RollFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class RollFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public RollFragment() {
-        // Required empty public constructor
     }
     public static RollFragment newInstance(String param1, String param2) {
         RollFragment fragment = new RollFragment();
@@ -55,6 +52,13 @@ public class RollFragment extends Fragment {
         }
     }
 
+    /**
+     * Po vytvoření View nastavujeme vlastní komponenty
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return View
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -69,6 +73,9 @@ public class RollFragment extends Fragment {
         image.setVisibility(screen.GONE);
         helpText = (TextView) screen.findViewById(R.id.textView118);
 
+        /**
+         * Event listener, spuštějící začátek sekvence metod pro pomoc
+         */
         startProcess = (Button) screen.findViewById(R.id.button23);
         startProcess.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,18 +90,27 @@ public class RollFragment extends Fragment {
                 new CountDownTimer(durationStart, 1000){
                     long separateCounter = 4000; /** POČÍTÁ PO 5 VTEŘINÁCH **/
 
+                    /**
+                     * Nastavuje kroky pro nádech
+                     */
                     private void inhale(){
                         helpText.setText("Lehký nádech do břicha");
                         image.setImageResource(R.drawable.inhale);
                         separateCounter = 3000;
                     }
 
+                    /**
+                     * Nastavuje kroky pro výdech
+                     */
                     private void exhale(){
                         helpText.setText("Lehký výdech pusou");
                         image.setImageResource(R.drawable.exhale);
                         separateCounter = 3000;
                     }
 
+                    /**
+                     * Nastavuje kroky pro nádech až do plic
+                     */
                     private void inhaleLungs(){
                         helpText.setText("Lehký nádech do plic");
                         image.setImageResource(R.drawable.inhale);

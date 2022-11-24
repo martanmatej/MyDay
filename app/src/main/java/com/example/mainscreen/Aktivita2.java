@@ -20,10 +20,17 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+/**
+ * Třída, obsahující možnosti výběru pomoci
+ * Nachází se zde 4 typy nabídky pomoci + v případě akutního problému možnost zavolat odborníky
+ */
 public class Aktivita2 extends AppCompatActivity  {
     static int i=0;
     private int CALL_PERMISSION_CODE = 1;
 
+    /**
+     * Metoda, pro navigování zpátky na stránku, která se dotazuje momentálního problému
+     */
     public void navigateBack(){
         Intent intent = new Intent(this, momentalniProblem.class);
         startActivity(intent);
@@ -44,10 +51,12 @@ public class Aktivita2 extends AppCompatActivity  {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_aktivita2);
 
+        //Permise pro telefonování
         String PERMISSIONS = Manifest.permission.CALL_PHONE;
 
-        Button button8 = findViewById(R.id.button8);
-        Button button9 = findViewById(R.id.button9);
+        /**
+         * Přiřazení buttonu na variable button
+         */
         Button button12 = findViewById(R.id.button12);//transparent button soustřeď se na jiné objekty
         Button button13 = findViewById(R.id.button13);//transparent button vyjmenuj co vidíš a slyšíš
         Button button14 = findViewById(R.id.button14);//transparent button kontrolované dýchání
@@ -67,6 +76,9 @@ public class Aktivita2 extends AppCompatActivity  {
 
         System.out.println(i);
 
+        /**
+         * Nastavení event listenerů pro každé tlačítko
+         */
         //tlačítko pro návrat zpět
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +129,9 @@ public class Aktivita2 extends AppCompatActivity  {
 
     }
 
+    /**
+     * Metoda volající request na permission pro telefonování
+     */
     private void hasPermission(){
         if(ContextCompat.checkSelfPermission(Aktivita2.this,
                 Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
@@ -126,10 +141,17 @@ public class Aktivita2 extends AppCompatActivity  {
             requestCallPermissions();
         }
     }
+
+    /**
+     * Pomocná metoda pro request permission pro telefonování
+     */
     private void requestCallPermissions(){
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CALL_PHONE}, CALL_PERMISSION_CODE);
     }
 
+    /**
+     * Metoda, která spouští dialog okno. Po potvrzení volá linku první psychické pomoci
+     */
     public void openPhoneApp(){
         hasPermission();
 
@@ -149,19 +171,37 @@ public class Aktivita2 extends AppCompatActivity  {
         question.show();
     }
 
-
+    /**
+     * Metoda otvírající okno s 5 věcmi pro zápis
+     * 1. metoda pomoci
+     */
     public void openAktivita6(){
         Intent intent = new Intent(this, Aktivita6.class);
         startActivity(intent);
     }
+
+    /**
+     * Metoda otevírající okno s 5 vysněnými aktivitami pro zlepšení nálady a odvedení pozornost
+     * 2. metoda pomoci
+     */
     public void openAktivita7(){
         Intent intent = new Intent(this, Aktivita7.class);
         startActivity(intent);
     }
+
+    /**
+     * Metoda, otevírající okno s 3 styly dýchání
+     * 3. metoda pomoci
+     */
     public void openAktivita4(){
         Intent intent = new Intent(this, Aktivita4.class);
         startActivity(intent);
     }
+
+    /**
+     * Metoda, otevírající okno s citáty pro ukázání, že život má stále smysl
+     * 4. metoda pomoci
+     */
     public void openAktivita5(){
         Intent intent = new Intent(this, Aktivita5.class);
         startActivity(intent);

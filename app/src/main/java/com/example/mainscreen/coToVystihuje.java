@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 
+/**
+ * Třída, která informuje uživatele o typech poruch, na které se aplikace zaměřuje
+ * Zobrazí se po kliknutí v aktuálním problému na možnost NE
+ */
 public class coToVystihuje extends AppCompatActivity {
 
     @Override

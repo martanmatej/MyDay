@@ -17,7 +17,6 @@ import android.widget.Switch;
 import android.widget.Toolbar;
 
 public class SettingsActivity extends AppCompatActivity {
-    Switch aSwitch;
     protected Button button10, button11;
 
     /**
@@ -47,15 +46,13 @@ public class SettingsActivity extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Dat sem nas official IG
-                openUrl("https://www.instagram.com/martanmatej");
+                openUrl("https://www.instagram.com/myday.mentalhealth.app/");
             }
         });
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Dat sem nas official web
-                openUrl("https://www.linkabezpeci.cz/");
+                openUrl("http://www.myday.tode.cz");
             }
         });
     }

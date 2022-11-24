@@ -30,10 +30,15 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * Třída, řešící logiku typu stylů dýchání. Obsahuje fragmentManager
+ */
 public class Aktivita4 extends AppCompatActivity {
 
-    boolean dialogShouldShow = false;
     Button bricho, cisla, roll;
+    /**
+     * Navigace zpět na screen pro výběr všech stylů pomoci
+     */
     public void navigateBack(){
         Intent intent = new Intent(this, Aktivita2.class);
         startActivity(intent);
@@ -53,14 +58,10 @@ public class Aktivita4 extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#180e2b"));
         getSupportActionBar().hide();
-        System.out.println("SHOWW:: " + dialogShouldShow);
         setContentView(R.layout.activity_aktivita4);
 
+        Aktivita2.i++;
         control(); //Dotaz, po využití 5. funkce aplikace
-        if(dialogShouldShow){
-            showDialog();
-            dialogShouldShow = false;
-        }
 
         //FragmentManager meni fragmentContainerView na urceny fragment
         bricho = (Button) findViewById(R.id.button21);
@@ -107,13 +108,13 @@ public class Aktivita4 extends AppCompatActivity {
                         .commit();
             }
         });
-        if(dialogShouldShow){
-            showDialog();
-            dialogShouldShow = false;
-        }
 
     }
 
+    /**
+     * Metoda, která kontroluje kolik aktivit uživatel vyzkoušel a ptá se ho zda, chce pokračovat
+     * @count je nastaven po 4 opakováních
+     */
     public void control(){
         if(Aktivita2.i>4){
             Aktivita2.i=1;
@@ -132,11 +133,17 @@ public class Aktivita4 extends AppCompatActivity {
         }
     }
 
+    /**
+     * Metoda, posouvající na další screen pomoci (citáty)
+     */
     public void transfareNext(){
         Intent intent = new Intent(this, Aktivita5.class);
         startActivity(intent);
     }
 
+    /**
+     * Metoda, zobrazující dialog s dotazem, zda se cítí lépe
+     */
     public void showDialog(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -156,6 +163,10 @@ public class Aktivita4 extends AppCompatActivity {
         });
         dialog.show();
     }
+
+    /**
+     * Pomocná metoda pro @showDialog metodu. Zobrazí jiný dialog v případě potvrzeného zlepšení
+     */
     public void showDialogBetter(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -174,6 +185,9 @@ public class Aktivita4 extends AppCompatActivity {
         });
         dialog.show();
     }
+    /**
+     * Pomocná metoda pro @showDialog metodu. Zobrazí jiný dialog v případě potvrzeného zhoršení a nabídne možnosti
+     */
     public void showDialogWorse(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.create();
@@ -199,6 +213,10 @@ public class Aktivita4 extends AppCompatActivity {
         });
         dialog.show();
     }
+
+    /**
+     * Navigace na domovskou obrazovku
+     */
     public void HandleGoHome(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
