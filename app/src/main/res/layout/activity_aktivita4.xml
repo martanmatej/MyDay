@@ -9,10 +9,28 @@
 
     <TextView
         android:id="@+id/textView110"
+        android:layout_width="412dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="760dp"
+        android:width="411dp"
+        android:background="@drawable/gradientblue"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView108"
         android:layout_width="411dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="679dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="764dp"
         android:width="411dp"
         android:background="@drawable/dychanitop"
         android:gravity="center"
@@ -21,59 +39,67 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
 
     <Button
         android:id="@+id/button21"
         android:layout_width="137dp"
         android:layout_height="60dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="618dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="275dp"
+        android:layout_marginBottom="704dp"
         android:background="@drawable/dychanidrawable"
         android:text="Dýchání do břicha"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
 
     <Button
         android:id="@+id/button22"
         android:layout_width="137dp"
         android:layout_height="60dp"
-        android:layout_marginStart="265dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="618dp"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="704dp"
         android:background="@drawable/dychanidrawable"
         android:text="Roll"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
 
     <Button
         android:id="@+id/button20"
         android:layout_width="137dp"
         android:layout_height="60dp"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="137dp"
-        android:layout_marginBottom="618dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="704dp"
         android:background="@drawable/dychanidrawable"
         android:text="4-7-8"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
