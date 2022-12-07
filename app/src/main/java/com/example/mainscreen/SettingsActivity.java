@@ -52,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrl("http://www.myday.tode.cz");
+                openUrl("https://mydayandroid.tode.cz/");
             }
         });
     }
