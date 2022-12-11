@@ -763,7 +763,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="0dp"
-                android:text="o	LekavostNeklid, psychické napětí"
+                android:text="o	Lekavost"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
