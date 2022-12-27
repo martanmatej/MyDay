@@ -34,8 +34,7 @@ public class Aktivita6 extends AppCompatActivity {
         /**
          * Nastavení prvotního stavu + inicializace
          */
-        Aktivita2.i++; //Vlastnost ukazující počet aktuálních kliknutí. Na 4 se resetuje
-        System.out.println(Aktivita2.i);
+        Aktivita2.increaseActivityCounter(); //Vlastnost ukazující počet aktuálních kliknutí. Na 4 se resetuje
         control(); //počítá do 4 a když vetší shodí na 1
         confirm = (Button) findViewById(R.id.button16);
         input1 = (EditText) findViewById(R.id.input20);
@@ -62,8 +61,8 @@ public class Aktivita6 extends AppCompatActivity {
      * @count je nastaven po 4 opakováních
      */
     public void control(){
-        if(Aktivita2.i>4){
-            Aktivita2.i=1;
+        if(Aktivita2.getActivityCounter()>4){
+            Aktivita2.setActivityCounter(1);
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.create();
             dialog.setTitle("Upozornění");

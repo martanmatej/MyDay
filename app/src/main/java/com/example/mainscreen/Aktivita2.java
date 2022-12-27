@@ -25,8 +25,18 @@ import android.widget.ImageButton;
  * Nachází se zde 4 typy nabídky pomoci + v případě akutního problému možnost zavolat odborníky
  */
 public class Aktivita2 extends AppCompatActivity  {
-    static int i=0;
+    private static int i=0;
     private int CALL_PERMISSION_CODE = 1;
+
+    public static void setActivityCounter(int cislo){
+        i = cislo;
+    }
+    public static void increaseActivityCounter(){
+        i++;
+    }
+    public static int getActivityCounter(){
+        return i;
+    }
 
     /**
      * Metoda, pro navigování zpátky na stránku, která se dotazuje momentálního problému

@@ -57,7 +57,7 @@ public class Aktivita5 extends AppCompatActivity {
         setContentView(R.layout.activity_aktivita5);
 
 
-        Aktivita2.i++;
+        Aktivita2.increaseActivityCounter();
         control();
         String helper;
         mainText = findViewById(R.id.textView120);
@@ -119,8 +119,8 @@ public class Aktivita5 extends AppCompatActivity {
      * @count je nastaven po 4 opakováních
      */
     public void control(){
-        if(Aktivita2.i>4){
-            Aktivita2.i=1;
+        if(Aktivita2.getActivityCounter()>4){
+            Aktivita2.setActivityCounter(1);
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.create();
             dialog.setTitle("Upozornění");

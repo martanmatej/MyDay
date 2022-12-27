@@ -60,7 +60,7 @@ public class Aktivita4 extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_aktivita4);
 
-        Aktivita2.i++;
+        Aktivita2.increaseActivityCounter();
         control(); //Dotaz, po využití 5. funkce aplikace
 
         //FragmentManager meni fragmentContainerView na urceny fragment
@@ -116,8 +116,8 @@ public class Aktivita4 extends AppCompatActivity {
      * @count je nastaven po 4 opakováních
      */
     public void control(){
-        if(Aktivita2.i>4){
-            Aktivita2.i=1;
+        if(Aktivita2.getActivityCounter()>4){
+            Aktivita2.setActivityCounter(1);
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.create();
             dialog.setTitle("Upozornění");

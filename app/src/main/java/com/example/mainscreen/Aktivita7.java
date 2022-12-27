@@ -32,10 +32,9 @@ public class Aktivita7 extends AppCompatActivity {
         Title = (EditText) findViewById(R.id.Title);
 
 
-        Aktivita2.i++;
+        Aktivita2.increaseActivityCounter();
         control();
 
-        System.out.println("Aktivita7 " + Aktivita2.i);
 
         /**
          * Event listener, měnící názvy a ukládající data do listu podle počtu stisknutí tlačítka
@@ -115,7 +114,7 @@ public class Aktivita7 extends AppCompatActivity {
     }
 
     /**
-     * Pomocná metoda pro @showDialog metodu. Zobrazí jiný dialog v případě potvrzeného zlepšení
+     * Pomocná metoda pro @showDialog metodu. Zobrazí jiný dialog v případě potvrzeného zlepšení s možnostmi návratu nebo opakování
      */
     public void showDialogAgain() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -159,8 +158,8 @@ public class Aktivita7 extends AppCompatActivity {
      * @count je nastaven po 4 opakováních
      */
     public void control() {
-        if (Aktivita2.i > 4) {
-            Aktivita2.i = 1;
+        if (Aktivita2.getActivityCounter() > 4) {
+            Aktivita2.setActivityCounter(1);
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.create();
             dialog.setTitle("Upozornění");

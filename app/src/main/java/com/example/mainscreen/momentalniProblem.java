@@ -72,8 +72,8 @@ public class momentalniProblem extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        Aktivita2.i=0;
-        Log.i("onResumeProblem",Integer.toString(Aktivita2.i));
+        Aktivita2.setActivityCounter(0);
+        Log.i("onResumeProblem",Integer.toString(Aktivita2.getActivityCounter()));
     }
 
     /**
